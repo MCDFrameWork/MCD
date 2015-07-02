@@ -17,7 +17,7 @@
 		ADF3825C1B459C2F00BA3244 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = ADF382511B459C2F00BA3244 /* main.lua */; };
 		ADF3825D1B459C2F00BA3244 /* test.lua in Resources */ = {isa = PBXBuildFile; fileRef = ADF382521B459C2F00BA3244 /* test.lua */; };
 		ADF3825E1B459C2F00BA3244 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF3825B1B459C2F00BA3244 /* libluajit.a */; };
-		ADF382611B459C5000BA3244 /* LuaBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADF3825F1B459C5000BA3244 /* LuaBridge.mm */; };
+		D3F323C31B45A196005E0D66 /* LuaBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3F323C21B45A196005E0D66 /* LuaBridge.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,8 @@
 		ADF382571B459C2F00BA3244 /* luaconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luaconf.h; sourceTree = "<group>"; };
 		ADF382581B459C2F00BA3244 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lualib.h; sourceTree = "<group>"; };
 		ADF3825B1B459C2F00BA3244 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libluajit.a; sourceTree = "<group>"; };
-		ADF3825F1B459C5000BA3244 /* LuaBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LuaBridge.mm; sourceTree = "<group>"; };
-		ADF382601B459C5000BA3244 /* LuaBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaBridge.h; sourceTree = "<group>"; };
+		D3F323C11B45A196005E0D66 /* LuaBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaBridge.h; sourceTree = "<group>"; };
+		D3F323C21B45A196005E0D66 /* LuaBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LuaBridge.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,7 @@
 		ADF382291B459BCC00BA3244 /* MCD */ = {
 			isa = PBXGroup;
 			children = (
-				ADF3825F1B459C5000BA3244 /* LuaBridge.mm */,
-				ADF382601B459C5000BA3244 /* LuaBridge.h */,
+				D3F323C01B45A196005E0D66 /* LuaBridge */,
 				ADF3822E1B459BCC00BA3244 /* AppDelegate.h */,
 				ADF3822F1B459BCC00BA3244 /* AppDelegate.m */,
 				ADF382311B459BCC00BA3244 /* ViewController.h */,
@@ -180,6 +179,15 @@
 				ADF3825B1B459C2F00BA3244 /* libluajit.a */,
 			);
 			path = ios;
+			sourceTree = "<group>";
+		};
+		D3F323C01B45A196005E0D66 /* LuaBridge */ = {
+			isa = PBXGroup;
+			children = (
+				D3F323C11B45A196005E0D66 /* LuaBridge.h */,
+				D3F323C21B45A196005E0D66 /* LuaBridge.mm */,
+			);
+			path = LuaBridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +295,7 @@
 				ADF382331B459BCC00BA3244 /* ViewController.m in Sources */,
 				ADF382301B459BCC00BA3244 /* AppDelegate.m in Sources */,
 				ADF3822D1B459BCC00BA3244 /* main.m in Sources */,
-				ADF382611B459C5000BA3244 /* LuaBridge.mm in Sources */,
+				D3F323C31B45A196005E0D66 /* LuaBridge.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
