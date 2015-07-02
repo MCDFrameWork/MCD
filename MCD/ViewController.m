@@ -1,12 +1,13 @@
 //
 //  ViewController.m
-//  MCD
+//  TestLua
 //
-//  Created by fengxiao on 15/7/3.
-//  Copyright (c) 2015年 UniFrameWork. All rights reserved.
+//  Created by fengxiao on 15/6/30.
+//  Copyright (c) 2015年 hick. All rights reserved.
 //
 
 #import "ViewController.h"
+#include "LuaBridge.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    initLuaEngine();
+    self.view.backgroundColor = [UIColor grayColor];
 }
 
 - (void)didReceiveMemoryWarning {

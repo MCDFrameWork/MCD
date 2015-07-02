@@ -14,6 +14,10 @@
 		ADF382381B459BCC00BA3244 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF382371B459BCC00BA3244 /* Images.xcassets */; };
 		ADF3823B1B459BCC00BA3244 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF382391B459BCC00BA3244 /* LaunchScreen.xib */; };
 		ADF382471B459BCC00BA3244 /* MCDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF382461B459BCC00BA3244 /* MCDTests.m */; };
+		ADF3825C1B459C2F00BA3244 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = ADF382511B459C2F00BA3244 /* main.lua */; };
+		ADF3825D1B459C2F00BA3244 /* test.lua in Resources */ = {isa = PBXBuildFile; fileRef = ADF382521B459C2F00BA3244 /* test.lua */; };
+		ADF3825E1B459C2F00BA3244 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF3825B1B459C2F00BA3244 /* libluajit.a */; };
+		ADF382611B459C5000BA3244 /* LuaBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADF3825F1B459C5000BA3244 /* LuaBridge.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,15 @@
 		ADF382401B459BCC00BA3244 /* MCDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF382451B459BCC00BA3244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADF382461B459BCC00BA3244 /* MCDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCDTests.m; sourceTree = "<group>"; };
+		ADF382511B459C2F00BA3244 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; };
+		ADF382521B459C2F00BA3244 /* test.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.lua; sourceTree = "<group>"; };
+		ADF382551B459C2F00BA3244 /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lauxlib.h; sourceTree = "<group>"; };
+		ADF382561B459C2F00BA3244 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua.h; sourceTree = "<group>"; };
+		ADF382571B459C2F00BA3244 /* luaconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luaconf.h; sourceTree = "<group>"; };
+		ADF382581B459C2F00BA3244 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lualib.h; sourceTree = "<group>"; };
+		ADF3825B1B459C2F00BA3244 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libluajit.a; sourceTree = "<group>"; };
+		ADF3825F1B459C5000BA3244 /* LuaBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LuaBridge.mm; sourceTree = "<group>"; };
+		ADF382601B459C5000BA3244 /* LuaBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaBridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADF3825E1B459C2F00BA3244 /* libluajit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +77,8 @@
 		ADF3821E1B459BCC00BA3244 = {
 			isa = PBXGroup;
 			children = (
+				ADF382501B459C2F00BA3244 /* Resources */,
+				ADF382531B459C2F00BA3244 /* luajit */,
 				ADF382291B459BCC00BA3244 /* MCD */,
 				ADF382431B459BCC00BA3244 /* MCDTests */,
 				ADF382281B459BCC00BA3244 /* Products */,
@@ -81,6 +97,8 @@
 		ADF382291B459BCC00BA3244 /* MCD */ = {
 			isa = PBXGroup;
 			children = (
+				ADF3825F1B459C5000BA3244 /* LuaBridge.mm */,
+				ADF382601B459C5000BA3244 /* LuaBridge.h */,
 				ADF3822E1B459BCC00BA3244 /* AppDelegate.h */,
 				ADF3822F1B459BCC00BA3244 /* AppDelegate.m */,
 				ADF382311B459BCC00BA3244 /* ViewController.h */,
@@ -117,6 +135,51 @@
 				ADF382451B459BCC00BA3244 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADF382501B459C2F00BA3244 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADF382511B459C2F00BA3244 /* main.lua */,
+				ADF382521B459C2F00BA3244 /* test.lua */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ADF382531B459C2F00BA3244 /* luajit */ = {
+			isa = PBXGroup;
+			children = (
+				ADF382541B459C2F00BA3244 /* include */,
+				ADF382591B459C2F00BA3244 /* prebuilt */,
+			);
+			path = luajit;
+			sourceTree = "<group>";
+		};
+		ADF382541B459C2F00BA3244 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				ADF382551B459C2F00BA3244 /* lauxlib.h */,
+				ADF382561B459C2F00BA3244 /* lua.h */,
+				ADF382571B459C2F00BA3244 /* luaconf.h */,
+				ADF382581B459C2F00BA3244 /* lualib.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		ADF382591B459C2F00BA3244 /* prebuilt */ = {
+			isa = PBXGroup;
+			children = (
+				ADF3825A1B459C2F00BA3244 /* ios */,
+			);
+			path = prebuilt;
+			sourceTree = "<group>";
+		};
+		ADF3825A1B459C2F00BA3244 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				ADF3825B1B459C2F00BA3244 /* libluajit.a */,
+			);
+			path = ios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +262,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADF3825D1B459C2F00BA3244 /* test.lua in Resources */,
 				ADF382361B459BCC00BA3244 /* Main.storyboard in Resources */,
+				ADF3825C1B459C2F00BA3244 /* main.lua in Resources */,
 				ADF3823B1B459BCC00BA3244 /* LaunchScreen.xib in Resources */,
 				ADF382381B459BCC00BA3244 /* Images.xcassets in Resources */,
 			);
@@ -222,6 +287,7 @@
 				ADF382331B459BCC00BA3244 /* ViewController.m in Sources */,
 				ADF382301B459BCC00BA3244 /* AppDelegate.m in Sources */,
 				ADF3822D1B459BCC00BA3244 /* main.m in Sources */,
+				ADF382611B459C5000BA3244 /* LuaBridge.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +417,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MCD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/luajit/prebuilt/ios",
+				);
+				OTHER_LDFLAGS = (
+					"-pagezero_size",
+					10000,
+					"-image_base",
+					100000000,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -361,6 +437,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MCD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/luajit/prebuilt/ios",
+				);
+				OTHER_LDFLAGS = (
+					"-pagezero_size",
+					10000,
+					"-image_base",
+					100000000,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -418,6 +504,7 @@
 				ADF3824C1B459BCC00BA3244 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADF3824D1B459BCC00BA3244 /* Build configuration list for PBXNativeTarget "MCDTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +513,7 @@
 				ADF3824F1B459BCC00BA3244 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
